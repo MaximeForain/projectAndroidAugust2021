@@ -62,7 +62,10 @@
                 android:id="@+id/recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/card_view_bar" />
+                tools:listitem="@layout/card_view_bar"
+                android:paddingBottom="55dp"
+                android:clipToPadding="false"/>
+
         </LinearLayout>
 
         <LinearLayout
