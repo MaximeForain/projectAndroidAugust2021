@@ -1,0 +1,135 @@
+<resources>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                              App name                             |-->
+    <!-- '*******************************************************************'-->
+    <string name="app_name">MYBARS</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                       Bottom navigation menu                      |-->
+    <!-- '*******************************************************************'-->
+   <string name="home_space">Acceuil</string>
+   <string name="profile_space">Profil</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                               Login                               |-->
+    <!-- '*******************************************************************'-->
+    <string name="email_login">Adresse mail</string>
+    <string name="password_login">Mot de passe</string>
+    <string name="login_connection_button">Connexion</string>
+    <string name="login_registration"><u>Pas encore de compte ? Inscrivez-vous !</u></string>
+    <string name="title_logo">MYBARS</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                                Error                              |-->
+    <!-- '*******************************************************************'-->
+    <string name="user_already_exist">Cet utilisateur existe déjà !</string>
+    <string name="connectivity_error">Aucune connexion internet</string>
+    <string name="request_error">Une erreur s’est produite pendant votre demande</string>
+    <string name="technical_error">Erreur technique</string>
+    <string name="no_error">Pas d\'erreur</string>
+    <string name="bad_credentials">Identifiant ou mot de passe incorrect</string>
+    <string name="email_format_error">Adresse mail n\'est pas valide!</string>
+    <string name="email_empty_error">Adresse mail requise !</string>
+    <string name="username_format_error">Nom d\'utilisateur incorrect</string>
+    <string name="username_empty_error">Nom d\'utilisateur requis !</string>
+    <string name="phonenumber_format_error">Numéro de téléphone incorrect</string>
+    <string name="phonenumber_empty_error">Numéro de téléphone requis !</string>
+    <string name="validation_password_format_error">Mot de passe de validation incorrect</string>
+    <string name="validation_password_empty_error">Mot de passe de validation requis !</string>
+    <string name="form_error">Vous avez des champs incorrects !</string>
+    <string name="password_confirm_error">Confirmation incorrecte !</string>
+    <string name="password_no_confirm_error">Le mot de passe doit être confirmer !</string>
+    <string name="password__error">Un mot de passe est obligatoire !</string>
+    <string name="validation__suppression">Votre profil à bien été supprimer !</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                            SharedPref                             |-->
+    <!-- '*******************************************************************'-->
+    <string name="sharedPref">sharedPref </string>
+    <string name="exp_date_payload">expDate</string>
+    <string name="token">token</string>
+    <string name="user_id">userId</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                                ARGS                              |-->
+    <!-- '*******************************************************************'-->
+    <string name="EMPTY"> </string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                              Profile                              |-->
+    <!-- '*******************************************************************'-->
+    <string name="username_space">%1$s</string>
+    <string name="email_space">%1$s</string>
+    <string name="button_edit_profile">Modifier</string>
+    <string name="button_disconnexion_profile">Déconnexion</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                        Registration Profile                       |-->
+    <!-- '*******************************************************************'-->
+    <string name="registration_title">Créer mon profil</string>
+    <string name="email_registration">Adresse mail*</string>
+    <string name="username_registration">Nom d\'utilisateur*</string>
+    <string name="phonenuber_registration">Numéro de téléphone*</string>
+    <string name="title_genre_registration">Votre genre :</string>
+    <string name="title_password_registration">Choix du mot de passe :</string>
+    <string name="password_registration">Mot de passe*</string>
+    <string name="password_confirm_registration">Confirmer votre mot de passe*</string>
+    <string name="man_registration">Homme</string>
+    <string name="women_registration">Femme</string>
+    <string name="inscription">Vous êtes inscrit !</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                            Button general                         |-->
+    <!-- '*******************************************************************'-->
+    <string name="validate_button">Valider</string>
+    <string name="creat_button">Créer</string>
+    <string name="cancelled_button">Annuler</string>
+    <string name="delete_profile_button">Supprimer mon profil</string>
+    <string name="confirmation_button">Confirmer</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                            Edit Profile                           |-->
+    <!-- '*******************************************************************'-->
+    <string name="edit_profile_title">Modifier mon profil</string>
+    <string name="title_password_edit">Modification du mot de passe :</string>
+    <string name="password_edit">Mot de passe</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                                Home                               |-->
+    <!-- '*******************************************************************'-->
+    <string name="item">Item</string>
+    <string name="barname_space">%1$s</string>
+    <string name="no_barfound">Désoler  aucun bar n\'a été trouvé avec ce filtre !</string>
+
+
+    <!-- .*******************************************************************.-->
+    <!-- |                                Bar                                |-->
+    <!-- '*******************************************************************'-->
+    <string name="description_title">Description :</string>
+    <string name="access_to_menu_button">Carte des boissons</string>
+    <string name="appreciation_button">Donner une appréciation</string>
+    <string name="favorite_button">Mettre dans mes favoris</string>
+    <string name="validation_warning">Velliez donner une note pour valider !</string>
+    <string name="not_yet_accessible_warning">Nous sommes désolé mais la carte n\'est pas encore accessible</string>
+    <string name="number_of_review">(%1$s)</string>
+
+    <!-- .*******************************************************************.-->
+    <!-- |                            Popup filter                           |-->
+    <!-- '*******************************************************************'-->
+    <string name="favorits_filter">Bars favoris</string>
+    <string name="best_bars_filter">Bars les mieux noté</string>
+    <string name="all_bars_filter">Tout les bars</string>
+
+</resources>
