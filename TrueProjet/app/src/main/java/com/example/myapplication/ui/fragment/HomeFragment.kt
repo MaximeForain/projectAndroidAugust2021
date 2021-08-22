@@ -91,9 +91,13 @@ class HomeFragment: Fragment() {
 
             override fun onQueryTextChange(searchText: String?): Boolean {
                 homeViewModel.filledBars.observe(viewLifecycleOwner) { bars ->
-                    adapter.setBars(bars.filter {
+                    val barslist: List<Bar> = bars.filter {
                         bar -> bar.barname.toLowerCase(Locale.ROOT).startsWith(searchText.toString().toLowerCase(Locale.ROOT))
-                    })
+                    }
+
+                    binding.noBarFound.visibility = if (barslist.isEmpty()) View.VISIBLE else View.GONE
+
+                    adapter.setBars(barslist)
                 }
 
                 return false

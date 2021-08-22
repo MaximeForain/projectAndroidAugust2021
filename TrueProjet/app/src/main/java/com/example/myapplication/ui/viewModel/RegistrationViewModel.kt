@@ -5,11 +5,8 @@ import com.example.myapplication.model.Error
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.myapplication.model.Token
 import com.example.myapplication.model.User
 import com.example.myapplication.repositories.web.configuration.RetrofitConfigurationService
-import com.example.myapplication.repositories.web.dto.TokenDto
-import com.example.myapplication.services.mappers.TokenMapper
 import com.example.myapplication.services.mappers.UserMapper
 import com.example.myapplication.utils.NoConnectivityException
 import retrofit2.Call

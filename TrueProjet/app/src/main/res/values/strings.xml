@@ -43,9 +43,9 @@
     <string name="validation_password_empty_error">Mot de passe de validation requis !</string>
     <string name="form_error">Vous avez des champs incorrects !</string>
     <string name="password_confirm_error">Confirmation incorrecte !</string>
-    <string name="password_no_confirm_error">Le mot de passe doit être confirmer !</string>
+    <string name="password_no_confirm_error">Le mot de passe doit être confirmé !</string>
     <string name="password__error">Un mot de passe est obligatoire !</string>
-    <string name="validation__suppression">Votre profil à bien été supprimer !</string>
+    <string name="validation__suppression">Votre profil à bien été supprimé !</string>
 
 
     <!-- .*******************************************************************.-->
@@ -60,7 +60,7 @@
     <!-- .*******************************************************************.-->
     <!-- |                                ARGS                              |-->
     <!-- '*******************************************************************'-->
-    <string name="EMPTY"> </string>
+    <string name="EMPTY" translatable="false"> </string>
 
 
     <!-- .*******************************************************************.-->
@@ -104,6 +104,7 @@
     <string name="edit_profile_title">Modifier mon profil</string>
     <string name="title_password_edit">Modification du mot de passe :</string>
     <string name="password_edit">Mot de passe</string>
+    <string name="toast_profile_modified">Votre profil à été modifié</string>
 
 
     <!-- .*******************************************************************.-->
@@ -111,7 +112,7 @@
     <!-- '*******************************************************************'-->
     <string name="item">Item</string>
     <string name="barname_space">%1$s</string>
-    <string name="no_barfound">Désoler  aucun bar n\'a été trouvé avec ce filtre !</string>
+    <string name="no_barfound">Désolé  aucun bar n\'a été trouvé !</string>
 
 
     <!-- .*******************************************************************.-->
@@ -121,15 +122,16 @@
     <string name="access_to_menu_button">Carte des boissons</string>
     <string name="appreciation_button">Donner une appréciation</string>
     <string name="favorite_button">Mettre dans mes favoris</string>
-    <string name="validation_warning">Velliez donner une note pour valider !</string>
+    <string name="validation_warning">Veuilliez donner une note pour valider !</string>
     <string name="not_yet_accessible_warning">Nous sommes désolé mais la carte n\'est pas encore accessible</string>
     <string name="number_of_review">(%1$s)</string>
+
 
     <!-- .*******************************************************************.-->
     <!-- |                            Popup filter                           |-->
     <!-- '*******************************************************************'-->
     <string name="favorits_filter">Bars favoris</string>
     <string name="best_bars_filter">Bars les mieux noté</string>
-    <string name="all_bars_filter">Tout les bars</string>
+    <string name="all_bars_filter">Tous les bars</string>
 
 </resources>

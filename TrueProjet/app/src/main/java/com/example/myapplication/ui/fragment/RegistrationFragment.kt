@@ -3,7 +3,6 @@ package com.example.myapplication.ui.fragment
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.os.AsyncTask
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -53,7 +52,7 @@ class RegistrationFragment : Fragment() {
 
     private var isRegister : Boolean = false
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         registrationViewModel = ViewModelProvider(this).get(RegistrationViewModel::class.java)
         loginViewModel =  ViewModelProvider(this).get(LoginViewModel::class.java)
@@ -71,10 +70,11 @@ class RegistrationFragment : Fragment() {
         }
 
         // Registration button
-        binding.editProfileButton.setOnClickListener {
+        binding.creatProfileButton.setOnClickListener {
             if(validateForm()) {
                 addUser()
-            } else {
+            }
+            else {
                 showFieldsError()
                 Toast.makeText(activity, R.string.form_error, Toast.LENGTH_SHORT).show()
             }
@@ -269,23 +269,31 @@ class RegistrationFragment : Fragment() {
             binding.passwordTextInputLayout.isErrorEnabled = true
             binding.passwordTextInputLayout.error = getString(R.string.password__error)
             isValidatePassword = false
+            if (binding.passwordConfirmTextInputLayout.editText!!.text.isEmpty())
+                binding.passwordConfirmTextInputLayout.isErrorEnabled = false
         }
         else if (binding.passwordTextInputLayout.editText!!.text.isNotEmpty() && binding.passwordConfirmTextInputLayout.editText!!.text.isEmpty()) {
+            binding.passwordTextInputLayout.isErrorEnabled = false
             binding.passwordConfirmTextInputLayout.isErrorEnabled = true
             binding.passwordConfirmTextInputLayout.error = getString(R.string.password_no_confirm_error)
             isValidatePassword = false
         }
+        else if (binding.passwordTextInputLayout.editText!!.text.isEmpty() && binding.passwordConfirmTextInputLayout.editText!!.text.isNotEmpty()) {
+            binding.passwordTextInputLayout.isErrorEnabled = true
+            binding.passwordConfirmTextInputLayout.isErrorEnabled = true
+            binding.passwordTextInputLayout.error = getString(R.string.password__error)
+            binding.passwordConfirmTextInputLayout.error = getString(R.string.password_confirm_error)
+            isValidatePassword = false
+        }
         else if (binding.passwordTextInputLayout.editText!!.text.toString() != binding.passwordConfirmTextInputLayout.editText!!.text.toString()) {
+            binding.passwordTextInputLayout.isErrorEnabled = false
             binding.passwordConfirmTextInputLayout.isErrorEnabled = true
             binding.passwordConfirmTextInputLayout.error = getString(R.string.password_confirm_error)
             isValidatePassword = false
         } else {
-            binding.passwordTextInputLayout.isErrorEnabled = false
-            binding.passwordTextInputLayout.error = null
-
             binding.passwordConfirmTextInputLayout.isErrorEnabled = false
             binding.passwordConfirmTextInputLayout.error = null
-
+            binding.passwordTextInputLayout.error = null
             isValidatePassword = true
         }
     }
@@ -302,7 +310,7 @@ class RegistrationFragment : Fragment() {
         val isMan: Boolean      = binding.radioButtonMan.isChecked
         val isWommen: Boolean   = binding.radioButtonWommen.isChecked
 
-        val gender: String = if (!isMan && !isWommen) null.toString()
+        val gender: String? = if (!isMan && !isWommen) null
         else if (isMan) "H" else "F"
 
         registrationViewModel.addUser(User(email, password, username, phonenumber, gender))

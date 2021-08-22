@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentEditProfileBinding
+import com.example.myapplication.model.Login
 import com.example.myapplication.model.Token
 import com.example.myapplication.model.User
 import com.example.myapplication.ui.viewModel.EditProfileViewModel
@@ -65,7 +66,9 @@ class EditProfileFragment : Fragment() {
         inputsVerifier()
         completeFields()
 
-        editProfileViewModel.error.observe(viewLifecycleOwner){ error: Error -> this.displayErrorScreen(error) }
+        editProfileViewModel.error.observe(viewLifecycleOwner){
+            error: Error -> this.displayErrorScreen(error)
+        }
 
         // Cancelled button
         binding.cancelledEditProfileButton.setOnClickListener {
@@ -89,7 +92,7 @@ class EditProfileFragment : Fragment() {
         private const val ARG_USERNAME      = "ARG_FIRSTNAME"
         private const val ARG_PHONENUMBER   = "ARG_PHONE"
         private const val ARG_GENDER        = "ARG_STREET_NUMBER"
-        fun newArguments(email: String, username: String, phonenumber: String, gender: String): Bundle {
+        fun newArguments(email: String, username: String, phonenumber: String, gender: String?): Bundle {
             val args = Bundle()
             args.putString(ARG_EMAIL, email)
             args.putString(ARG_USERNAME, username)
@@ -126,6 +129,7 @@ class EditProfileFragment : Fragment() {
                     Toast.LENGTH_SHORT
             ).show()
             else -> {
+                Toast.makeText(activity, getString((R.string.toast_profile_modified)), Toast.LENGTH_SHORT).show()
                 NavHostFragment.findNavController(this).navigate(R.id.action_editProfileFragment_to_profileFragment)
             }
         }
@@ -255,17 +259,27 @@ class EditProfileFragment : Fragment() {
 
     private fun passwordCheckConfirmError() {
         if (binding.passwordTextInputLayout.editText!!.text.isNotEmpty() && binding.passwordConfirmTextInputLayout.editText!!.text.isEmpty()) {
+            binding.passwordTextInputLayout.isErrorEnabled = false
             binding.passwordConfirmTextInputLayout.isErrorEnabled = true
             binding.passwordConfirmTextInputLayout.error = getString(R.string.password_no_confirm_error)
             isValidatePassword = false
         }
+        else if (binding.passwordTextInputLayout.editText!!.text.isEmpty() && binding.passwordConfirmTextInputLayout.editText!!.text.isNotEmpty()) {
+            binding.passwordTextInputLayout.isErrorEnabled = true
+            binding.passwordConfirmTextInputLayout.isErrorEnabled = true
+            binding.passwordTextInputLayout.error = getString(R.string.password__error)
+            binding.passwordConfirmTextInputLayout.error = getString(R.string.password_confirm_error)
+            isValidatePassword = false
+        }
         else if (binding.passwordTextInputLayout.editText!!.text.toString() != binding.passwordConfirmTextInputLayout.editText!!.text.toString()) {
+            binding.passwordTextInputLayout.isErrorEnabled = false
             binding.passwordConfirmTextInputLayout.isErrorEnabled = true
             binding.passwordConfirmTextInputLayout.error = getString(R.string.password_confirm_error)
             isValidatePassword = false
         } else {
             binding.passwordConfirmTextInputLayout.isErrorEnabled = false
             binding.passwordConfirmTextInputLayout.error = null
+            binding.passwordTextInputLayout.error = null
             isValidatePassword = true
         }
     }

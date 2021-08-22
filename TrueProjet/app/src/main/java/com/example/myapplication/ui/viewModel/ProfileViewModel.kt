@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.myapplication.model.User
-import com.example.myapplication.repositories.web.configuration.RetrofitConfigurationService
 import com.example.myapplication.repositories.web.dto.UserDto
 import com.example.myapplication.services.mappers.UserMapper
 import retrofit2.Call
@@ -13,6 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import com.example.myapplication.model.Error
 import com.example.myapplication.model.Token
+import com.example.myapplication.repositories.web.configuration.RetrofitConfigurationService
 import com.example.myapplication.utils.NoConnectivityException
 
 

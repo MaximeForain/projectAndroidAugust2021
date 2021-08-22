@@ -1,8 +1,6 @@
 package com.example.myapplication.ui.viewModel
 
 import android.app.Application
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,7 +9,6 @@ import com.example.myapplication.model.ReviewToSend
 import com.example.myapplication.model.Token
 import com.example.myapplication.repositories.web.configuration.RetrofitConfigurationService
 import com.example.myapplication.services.mappers.ReviewMapper
-import com.example.myapplication.ui.fragment.BarFragment
 import com.example.myapplication.utils.NoConnectivityException
 import retrofit2.Call
 import retrofit2.Callback

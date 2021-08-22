@@ -198,6 +198,11 @@
                     android:backgroundTint="@color/midDarck"
                     android:text="@string/validate_button" />
             </LinearLayout>
+            <View
+                android:id="@+id/divider1"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
         </LinearLayout>
     </ScrollView>
 </layout>
